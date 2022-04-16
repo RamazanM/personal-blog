@@ -1,0 +1,33 @@
+<div class="header-container">
+    <div class="header">
+        <button mat-icon-button (click)="toggleMenu()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <img class="header-img" src="assets/logo/logo_shadow_full_w512.png" alt="" srcset="">
+        <div [hidden]="showSearch">
+            <button mat-icon-button (click)="openSearch()">
+                <mat-icon>search</mat-icon>
+            </button>
+        </div>
+        <div [hidden]="!showSearch">
+            <button mat-icon-button (click)="closeSearch()" [hidden]="showSearch">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="search-container" [hidden]="!showSearch">
+        <div class="search">
+            <mat-icon>search</mat-icon>
+            <input class="search-input" #search type="text" (blur)="closeSearch()" placeholder="Aramak için yaz...">
+        </div>
+    </div>
+    <div class="menu-container" [hidden]="!showMenu">
+        <div class="menu">
+            <button mat-raised-button color="primary">Anasayfa</button>
+            <button mat-raised-button color="primary">Projeler</button>
+            <button mat-raised-button color="primary">Tasarımlar</button>
+            <button mat-raised-button color="primary">Hakkımda</button>
+            <button mat-raised-button color="primary">İletişim</button>
+        </div>
+    </div>
+</div>
